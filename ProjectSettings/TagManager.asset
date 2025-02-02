@@ -22,6 +22,8 @@ TagManager:
   - buyHealth
   - buyGun
   - Walls
+  - finalScore
+  - Score
   layers:
   - Default
   - TransparentFX

@@ -188,6 +188,10 @@ MonoBehaviour:
   coinText: {fileID: 0}
   reward: 10
   coins: 0
+  isWeak: 0
+  isStrong: 1
+  isBoss: 0
+  plusScore: 1
 --- !u!61 &1956277454954076690
 BoxCollider2D:
   m_ObjectHideFlags: 0

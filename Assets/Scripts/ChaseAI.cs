@@ -20,16 +20,19 @@ public class ChaseAI : MonoBehaviour
     [SerializeField] GameObject fx;
 
     public Rigidbody2D rb;
-    public float dmgFromExplosion;
+    // public float dmgFromExplosion;
     public float dmg;
 
     public TMP_Text coinText;
     public int reward;
-    public int coins;
-
+    
     public bool isWeak;
     public bool isStrong;
     public bool isBoss;
+
+    public int plusScore;
+
+    public TMP_Text scoreText;
 
     void Start()
 {
@@ -49,6 +52,7 @@ public class ChaseAI : MonoBehaviour
 
     health = GetComponent<Health>();
     coinText = GameObject.FindGameObjectWithTag("Coins").GetComponent<TMP_Text>();
+    scoreText = GameObject.FindGameObjectWithTag("Score").GetComponent<TMP_Text>();
 
     Transform canvas = transform.Find("Canvas");
     if (canvas != null)
@@ -102,6 +106,8 @@ public class ChaseAI : MonoBehaviour
         Destroy(fxLive, 0.27f);
 
         Debug.Log("Coins after death: " + GameManager.Instance.coins);
+        GameManager.Instance.score += plusScore;
+        scoreText.text = "SCORE: " + GameManager.Instance.score;
     }
 
     public void OnDamage()
@@ -118,11 +124,8 @@ public class ChaseAI : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D _col)
     {
-        if (_col.gameObject.CompareTag("DeathFX"))
-        {
-            health.Damage(dmgFromExplosion);
-        }
-        else if (_col.gameObject.CompareTag("Player"))
+        
+        if (_col.gameObject.CompareTag("Player"))
         {
             plrHealth.Damage(dmg);
         }
