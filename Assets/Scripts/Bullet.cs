@@ -55,14 +55,14 @@ public class Bullet : MonoBehaviour
                 if (GameManager.Instance.isShotgun == true)
                 {
                     Vector2 push = (enemy.transform.position - transform.position).normalized; // Using transform.position for accuracy
-                    enemyRB.AddForce(push * 15, ForceMode2D.Impulse);
+                    enemyRB.AddForce(push * 100, ForceMode2D.Impulse);
 
                 }
 
                 else
                 {
                     Vector2 push = (enemy.transform.position - transform.position).normalized; // Using transform.position for accuracy
-                    enemyRB.AddForce(push * knockback, ForceMode2D.Impulse);
+                    enemyRB.AddForce(push * 100, ForceMode2D.Impulse);
 
                 }
                 

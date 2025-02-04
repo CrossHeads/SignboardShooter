@@ -183,15 +183,14 @@ MonoBehaviour:
   moveSpeed: 6
   fx: {fileID: 7124644123505068072, guid: 5caf7df560423c94b8ff84865c7b0be6, type: 3}
   rb: {fileID: 4047855891853901452}
-  dmgFromExplosion: 25
   dmg: 15
   coinText: {fileID: 0}
   reward: 10
-  coins: 0
   isWeak: 0
   isStrong: 1
   isBoss: 0
-  plusScore: 1
+  plusScore: 10
+  scoreText: {fileID: 0}
 --- !u!61 &1956277454954076690
 BoxCollider2D:
   m_ObjectHideFlags: 0

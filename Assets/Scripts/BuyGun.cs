@@ -72,6 +72,7 @@ public class BuyGun : MonoBehaviour
             HandleGunUpgrade();
             UpdateCoinsText();
             UpdateDamageText();
+            buyGun.text = "Upgrade Gun: " + GameManager.Instance.gunPrice;
         }
             
     }
@@ -142,7 +143,7 @@ public class BuyGun : MonoBehaviour
         GameManager.Instance.fireDelay = newFireDelay;
         GameManager.Instance.coins -= GameManager.Instance.gunPrice;
         GameManager.Instance.gunPrice = Mathf.RoundToInt(GameManager.Instance.gunPrice + GameManager.Instance.gunPrice * .3f);
-        buyGun.text = "Upgrade Gun: " + GameManager.Instance.gunPrice;
+        
     }
 
     public void InstantiateGun(GameObject newGun)
